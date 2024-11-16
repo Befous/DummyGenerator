@@ -13,6 +13,7 @@ func main() {
 		fmt.Println("Error loading lokasi data:", err)
 		return
 	}
+
 	alamat := controllers.GenerateRandomAlamat()
 	fmt.Print(alamat)
 }
