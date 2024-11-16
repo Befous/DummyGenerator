@@ -1,36 +1,11 @@
 package utils
 
 import (
-	_ "embed"
-	"encoding/json"
 	"fmt"
-	"io"
 	"math/rand"
-	"os"
 
 	"github.com/Befous/DummyGenerator/models"
 )
-
-var lokasi []models.DataAlamat
-
-func LoadLokasiFromJSON(filePath string) error {
-	file, err := os.Open(filePath)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	bytes, err := io.ReadAll(file)
-	if err != nil {
-		return err
-	}
-
-	err = json.Unmarshal(bytes, &lokasi)
-	if err != nil {
-		return err
-	}
-	return nil
-}
 
 func GetRandomProvinsi(r *rand.Rand) string {
 	provinsi := []string{"Jambi", "Bangka Belitung"}
