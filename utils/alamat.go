@@ -8,7 +8,7 @@ import (
 )
 
 func GetRandomProvinsi(r *rand.Rand) string {
-	provinsi := []string{"Jambi", "Bangka Belitung"}
+	provinsi := []string{"Bali", "Bangka Belitung", "Banten", "Bengkulu", "DI Yogyakarta", "DKI Jakarta", "Gorontalo", "Jambi", "Jawa Barat", "Jawa Tengah", "Jawa Timur", "Kalimantan Barat", "Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Timur", "Kalimantan Utara", "Kepulauan Riau", "Lampung", "Maluku", "Maluku Utara", "Nanggroe Aceh Darussalam (NAD)", "Nusa Tenggara Barat (NTB)", "Nusa Tenggara Timur (NTT)", "Papua", "Papua Barat", "Riau", "Sulawesi Barat", "Sulawesi Selatan", "Sulawesi Tengah", "Sulawesi Tenggara", "Sulawesi Utara", "Sumatera Barat", "Sumatera Selatan", "Sumatera Utara"}
 	return provinsi[r.Intn(len(provinsi))]
 }
 
@@ -59,7 +59,8 @@ func GenerateRandomAlamatLengkap(r *rand.Rand, alamat models.DataAlamat) string 
 
 	rtFormatted := fmt.Sprintf("%02d", rt)
 	rwFormatted := fmt.Sprintf("%02d", rw)
-	alamatLengkap := namaJalan + " RT " + rtFormatted + " RW " + rwFormatted + ", " + alamat.Desa_Kelurahan + ", " + alamat.Kecamatan + ", " + alamat.Kota_Kabupaten + ", " + alamat.Provinsi + " - " + alamat.Kode_Pos
+	kodePosFormatted := fmt.Sprintf("%d", alamat.Kode_Pos)
+	alamatLengkap := namaJalan + " RT " + rtFormatted + " RW " + rwFormatted + ", " + alamat.Desa_Kelurahan + ", " + alamat.Kecamatan + ", " + alamat.Kota_Kabupaten + ", " + alamat.Provinsi + " - " + kodePosFormatted
 
 	return alamatLengkap
 }

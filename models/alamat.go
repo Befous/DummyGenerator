@@ -1,7 +1,7 @@
 package models
 
 type DataAlamat struct {
-	Kode_Pos       string
+	Kode_Pos       int
 	Desa_Kelurahan string
 	Kecamatan      string
 	Kota_Kabupaten string
